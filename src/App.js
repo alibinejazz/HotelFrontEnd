@@ -2,6 +2,7 @@ import HotelTables from './components/HotelTables';
 import DetailPage from './components/DetailPage';
 import BookingForm from './components/BookingForm';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Confirmed from './components/Confirmed';
 
 
 function App() {
@@ -179,7 +180,8 @@ function App() {
       <Routes>
     <Route path="/" element={<HotelTables data = {table}/>}/>
     <Route path="/detailPage/:id" element={<DetailPage detail={table} />}/>
-    <Route path='/bookingForm' element={<BookingForm/>}/>
+    <Route path='/bookingForm' element={<BookingForm data={table}/>}/>
+    <Route path='confirmedBooking' element={<Confirmed/>}/>
     </Routes>
     </Router>
     </>

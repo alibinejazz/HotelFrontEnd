@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import xyz from "./HotelTables.module.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const HotelTables = ({data}) => {
 
+    const Nav = useNavigate();
     const [searchResults, setSearchResults] = useState(data);
     const [search, setSearch] = useState("");
     const handleSearch = () => {
@@ -12,6 +13,10 @@ const HotelTables = ({data}) => {
         );
         setSearchResults(filteredTable);
       };
+
+      function toBookForm(){
+        Nav('/bookingForm');
+      }
   return (
     <div>
         <input type="text" onChange={(e)=> setSearch(e.target.value)} value={search}/>
@@ -41,7 +46,7 @@ const HotelTables = ({data}) => {
                 <td>{x.Experience}</td>
                 <td>{x.Pool}</td>
                 <td>{x.Price}</td>
-                <td><button>Book Now</button></td>
+                <td><button onClick={toBookForm}>Book Now</button></td>
                 </tr>
                         ))}
                         {searchResults.length === 0 && (
