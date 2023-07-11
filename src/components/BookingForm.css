@@ -1,0 +1,15 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 6%;
+    background-color: rgb(233, 233, 233);
+    padding: 3%;
+    border: solid black;
+}
+
+input{
+    border-radius: 5px;
+}
